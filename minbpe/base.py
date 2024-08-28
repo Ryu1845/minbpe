@@ -32,8 +32,8 @@ def merge(ids, pair, idx):
     i = 0
     while i < len(ids):
         # if not at the very last position AND the pair matches, replace it
-        if ids[i] == pair[0] and i < len(ids) - 1 and ids[i+1] == pair[1]:
-            newids.append(idx)
+        if ids[i] == one_hot(pair[0]) and i < len(ids) - 1 and ids[i+1] == one_hot(pair[1]):
+            newids.append(one_hot(idx)+one_hot(pair[0])+one_hot(pair[1]))
             i += 2
         else:
             newids.append(ids[i])
